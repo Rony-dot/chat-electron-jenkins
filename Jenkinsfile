@@ -23,6 +23,7 @@ pipeline {
             '''
             git branch: 'main', url: 'https://github.com/ankurk91/google-chat-electron.git'
             sh '''
+              ls -ltaha
               pnpm install --frozen-lockfile
             '''
           }
