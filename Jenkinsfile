@@ -39,7 +39,6 @@ pipeline {
               . ~/.source_nvm.sh
               pwd
               ls -ltaha
-              cat ~/.bashrc
               rm -rf ./.github
               npm run pack:linux
             '''
@@ -48,6 +47,7 @@ pipeline {
         stage('Create debian package'){
           steps {
             sh '''
+              cat ~/.source_nvm.sh
               . ~/.source_nvm.sh
               npm run build:deb
               npm run build:deb-checksum
