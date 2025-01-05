@@ -5,10 +5,6 @@ pipeline {
         args '-u docker'
       }
     }
-    environment {
-        NODE_VERSION = '18.x'
-        NVM_DIR = "$HOME/.nvm"
-    }
 
     stages {
         stage('Setup node environment') {
