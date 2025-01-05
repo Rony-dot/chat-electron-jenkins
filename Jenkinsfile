@@ -6,6 +6,9 @@ pipeline {
         reuseNode true
       }
     }
+    tools{
+      nodejs 'nodejs'
+    }
 
     stages {
         stage('Setup node environment') {
