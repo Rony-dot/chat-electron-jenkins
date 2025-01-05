@@ -2,6 +2,7 @@ pipeline {
     agent {
       dockerfile {
         filename 'Dockerfile'
+        args '-u docker'
         reuseNode true
       }
     }
@@ -9,6 +10,7 @@ pipeline {
     stages {
         stage('Setup node environment') {
           steps {
+            sh 'pwd'
             sh 'curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash'
             sh '''
               nvm install 18
