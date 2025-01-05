@@ -5,6 +5,9 @@ pipeline {
         args '-u docker'
       }
     }
+    options {
+      timeout(time: 10, unit: 'MINUTES')
+    }
 
     stages {
         stage('Setup node environment') {
