@@ -2,7 +2,7 @@ pipeline {
     agent {
       dockerfile {
         filename 'Dockerfile'
-        args '-u docker'
+        args '-u root'
         reuseNode true
       }
     }
