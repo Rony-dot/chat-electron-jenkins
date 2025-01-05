@@ -17,7 +17,8 @@ pipeline {
               if [ ! -d "$HOME/.nvm" ]; then
                 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
               fi
-              source ~/.source_nvm.sh
+              cat ~/.source_nvm.sh
+              . ~/.source_nvm.sh
               nvm install 18
               node -v
               nvm current
@@ -34,7 +35,8 @@ pipeline {
         stage('Pack for linux'){
           steps {
             sh '''
-              source ~/.source_nvm.sh
+              cat ~/.source_nvm.sh
+              . ~/.source_nvm.sh
               pwd
               ls -ltaha
               cat ~/.bashrc
@@ -46,7 +48,7 @@ pipeline {
         stage('Create debian package'){
           steps {
             sh '''
-              source ~/.source_nvm.sh
+              . ~/.source_nvm.sh
               npm run build:deb
               npm run build:deb-checksum
             '''
