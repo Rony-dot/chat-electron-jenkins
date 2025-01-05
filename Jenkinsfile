@@ -14,6 +14,7 @@ pipeline {
     stages {
         stage('Setup node environment') {
           steps {
+            clearnWs()
             git branch: 'main', url: 'https://github.com/ankurk91/google-chat-electron.git'
             sh '''
               #echo 'export NVM_DIR="$HOME/.nvm"' > ~/.source_nvm.sh
@@ -22,6 +23,8 @@ pipeline {
               if [ ! -d "$HOME/.nvm" ]; then
                 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
               fi
+              echo $NVM_DIR
+              ls -ltrha $NVM_DIR
               #source ~/.source_nvm.sh
               nvm install 18
               node -v
