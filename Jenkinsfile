@@ -21,8 +21,11 @@ pipeline {
               nvm current
               npm -v
               npm install -g pnpm@^7
-              ls -ltaha
               pnpm install --frozen-lockfile
+              pwd
+              ls -ltaha
+              cat ~/.bashrc
+              echo $PATH
             '''
           }
         }
@@ -30,6 +33,10 @@ pipeline {
         stage('Pack for linux'){
           steps {
             sh '''
+              pwd
+              ls -ltaha
+              cat ~/.bashrc
+              echo $PATH
               rm -rf ./.github
               npm run pack:linux
             '''
