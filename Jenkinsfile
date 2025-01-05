@@ -14,7 +14,7 @@ pipeline {
     stages {
         stage('Setup node environment') {
           steps {
-            clearnWs()
+            cleanWs()
             git branch: 'main', url: 'https://github.com/ankurk91/google-chat-electron.git'
             sh '''
               #echo 'export NVM_DIR="$HOME/.nvm"' > ~/.source_nvm.sh
