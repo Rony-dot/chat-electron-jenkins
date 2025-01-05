@@ -17,9 +17,7 @@ pipeline {
               if [ ! -d "$HOME/.nvm" ]; then
                 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
               fi
-              echo $NVM_DIR
-              ls -ltrha $NVM_DIR
-              #source ~/.source_nvm.sh
+              source ~/.source_nvm.sh
               nvm install 18
               node -v
               nvm current
