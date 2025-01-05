@@ -2,7 +2,6 @@ pipeline {
     agent {
       dockerfile {
         filename 'Dockerfile'
-        label 'custom-dockerfile-for-gchat'
         reuseNode true
       }
     }
