@@ -3,7 +3,6 @@ pipeline {
       dockerfile {
         filename 'Dockerfile'
         args '-u docker'
-        reuseNode true
       }
     }
     environment {
