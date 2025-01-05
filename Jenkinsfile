@@ -16,14 +16,13 @@ pipeline {
           steps {
             git branch: 'main', url: 'https://github.com/ankurk91/google-chat-electron.git'
             sh '''
-              echo 'export NVM_DIR="$HOME/.nvm"' > ~/.source_nvm.sh
-              echo '[ -s "$NVM_DIR/nvm.sh" ] && \\. "$NVM_DIR/nvm.sh"' >> ~/.source_nvm.sh
-              echo '[ -s "$NVM_DIR/bash_completion" ] && \\. "$NVM_DIR/bash_completion"' >> ~/.source_nvm.sh
-              cat ~/.source_nvm.sh
+              #echo 'export NVM_DIR="$HOME/.nvm"' > ~/.source_nvm.sh
+              echo '[ -s "$NVM_DIR/nvm.sh" ] && \\. "$NVM_DIR/nvm.sh"' >> #~/.source_nvm.sh
+              echo '[ -s "$NVM_DIR/bash_completion" ] && \\. "$NVM_DIR/#bash_completion"' >> ~/.source_nvm.sh
               if [ ! -d "$HOME/.nvm" ]; then
                 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
               fi
-              source ~/.source_nvm.sh
+              #source ~/.source_nvm.sh
               nvm install 18
               node -v
               nvm current
