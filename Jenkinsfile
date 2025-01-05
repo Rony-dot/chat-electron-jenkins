@@ -10,6 +10,7 @@ pipeline {
     stages {
         stage('Setup node environment') {
           steps {
+            git branch: 'main', url: 'https://github.com/ankurk91/google-chat-electron.git'
             sh '''
               curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
               export NVM_DIR="$HOME/.nvm"
@@ -20,9 +21,6 @@ pipeline {
               nvm current
               npm -v
               npm install -g pnpm@^7
-            '''
-            git branch: 'main', url: 'https://github.com/ankurk91/google-chat-electron.git'
-            sh '''
               ls -ltaha
               pnpm install --frozen-lockfile
             '''
