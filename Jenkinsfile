@@ -14,6 +14,8 @@ pipeline {
           steps {
             git branch: 'main', url: 'https://github.com/ankurk91/google-chat-electron.git'
             sh '''
+              hostname
+              whoami
               echo 'export NVM_DIR="$HOME/.nvm"' > ~/.source_nvm.sh
               echo '[ -s "$NVM_DIR/nvm.sh" ] && \\. "$NVM_DIR/nvm.sh"' >> ~/.source_nvm.sh
               echo '[ -s "$NVM_DIR/bash_completion" ] && \\. "$NVM_DIR/bash_completion"' >> ~/.source_nvm.sh
